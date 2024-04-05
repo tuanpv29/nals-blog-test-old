@@ -9,7 +9,13 @@ import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
   styleUrl: './blog-pagination.component.scss',
 })
 export class BlogPaginationComponent {
-  page = 4;
-  pageSize = 20;
-  collectionSize = 100;
+  page = 1;
+  pageSize = 10;
+  collectionSize = 50;
+
+  constructor() {}
+
+  onPageChange(page: number): void {
+    console.log('page:', page);
+  }
 }

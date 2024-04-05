@@ -1,8 +1,10 @@
 <ngb-pagination
-  [(page)]="page"
-  [collectionSize]="collectionSize"
-  [pageSize]="pageSize"
-  [boundaryLinks]="true"
+  class="d-flex justify-content-center"
+  [ellipses]="false"
   [maxSize]="5"
   [rotate]="true"
-  [ellipses]="false" />
+  [boundaryLinks]="true"
+  [(page)]="page"
+  [pageSize]="pageSize"
+  [collectionSize]="collectionSize"
+  (pageChange)="onPageChange($event)" />

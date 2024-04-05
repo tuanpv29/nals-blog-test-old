@@ -18,4 +18,6 @@ import { BlogPaginationComponent } from '../../components/blog-pagination/blog-p
   templateUrl: './blog-home.component.html',
   styleUrl: './blog-home.component.scss',
 })
-export class BlogHomeComponent {}
+export class BlogHomeComponent {
+  constructor() {}
+}

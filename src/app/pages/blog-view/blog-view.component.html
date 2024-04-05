@@ -1,19 +1,17 @@
-<div ngbDropdown class="d-inline-block" id="myDropdown">
-  <button
-    type="button"
-    class="btn btn-outline-primary"
-    id="dropdown"
-    ngbDropdownToggle>
-    Toggle
-  </button>
-  <div ngbDropdownMenu aria-labelledby="dropdown">
-    <button ngbDropdownItem (click)="onUpdateClicked(950)">Update</button>
-    <button ngbDropdownItem (click)="onDeleteClicked(950)">Delete</button>
+@if (blog) {
+  <div class="mb-3 text-end">
+    <button class="btn btn-primary" (click)="onUpdateClicked(blog.id)">
+      Update
+    </button>
+    <button class="btn btn-primary" (click)="onDeleteClicked(blog.id)">
+      Delete
+    </button>
   </div>
-</div>
-<img
-  src="https://res.cloudinary.com/sontd-nal-vn/image/upload/v1710506783/ye66qvvmebignj9tpkyn.jpg"
-  alt="Banner image" />
-<p>Posted Jan 10, 1998</p>
-<h3>Blog title</h3>
-<p>Blog content</p>
+  <img [src]="blog.image.url" alt="Banner image" class="w-100 h-auto" />
+  <p>
+    <i class="bi bi-clock me-1"></i>
+    Posted {{ blog.created_at | date }}
+  </p>
+  <h3>{{ blog.title }}</h3>
+  <p>{{ blog.content }}</p>
+}

@@ -1,16 +1,34 @@
-<ul class="list-unstyled">
-  @for (blog of blogs; track blog.id) {
-    <li class="border">
-      <img
-        height="100"
-        width="100"
-        [src]="blog.image.url"
-        alt="Placeholder image" />
-      <h5>{{ blog.title }}</h5>
-      <p>
-        {{ blog.created_at }}
-      </p>
-      <a [routerLink]="['/view', blog.id]">Read more</a>
-    </li>
+<div class="row g-5">
+  @for (blog of blogs$ | async; track blog.id) {
+    <div class="col-12 col-xl-6">
+      <div class="card">
+        <div class="row g-0">
+          <div class="col-auto">
+            <div class="img-wrapper">
+              <img
+                width="300"
+                height="200"
+                alt="Placeholder image"
+                [src]="blog.image.url" />
+            </div>
+          </div>
+          <div class="col">
+            <div class="card-body h-100">
+              <h5 class="card-title">{{ blog.title }}</h5>
+              <p class="mb-0 text-muted">
+                <i class="bi bi-clock me-1"></i>
+                {{ blog.created_at | date }}
+              </p>
+              <a
+                class="btn btn-link stretched-link px-0 py-3 text-reset"
+                [routerLink]="['/view', blog.id]">
+                Read More
+                <i class="bi bi-arrow-right ms-2"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   }
-</ul>
+</div>
