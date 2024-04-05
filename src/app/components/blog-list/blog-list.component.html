@@ -1,0 +1,16 @@
+<ul class="list-unstyled">
+  @for (blog of blogs; track blog.id) {
+    <li class="border">
+      <img
+        height="100"
+        width="100"
+        [src]="blog.image.url"
+        alt="Placeholder image" />
+      <h5>{{ blog.title }}</h5>
+      <p>
+        {{ blog.created_at }}
+      </p>
+      <a [routerLink]="['/view', blog.id]">Read more</a>
+    </li>
+  }
+</ul>
